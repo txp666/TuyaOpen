@@ -247,7 +247,7 @@ static void __app_ai_audio_state_inform_cb(AI_AUDIO_STATE_E state)
 #endif
 
 #if defined(ENABLE_CHAT_DISPLAY) && (ENABLE_CHAT_DISPLAY == 1)
-        app_display_send_msg(TY_DISPLAY_TP_EMOTION, (uint8_t *)"NATURAL", strlen("NATURAL"));
+        app_display_send_msg(TY_DISPLAY_TP_EMOTION, (uint8_t *)EMOJI_NEUTRAL, strlen(EMOJI_NEUTRAL));
         app_display_send_msg(TY_DISPLAY_TP_STATUS, (uint8_t *)STANDBY, strlen(STANDBY));
 #endif
         break;
@@ -267,6 +267,9 @@ static void __app_ai_audio_state_inform_cb(AI_AUDIO_STATE_E state)
         app_display_send_msg(TY_DISPLAY_TP_STATUS, (uint8_t *)SPEAKING, strlen(SPEAKING));
 #endif
 
+        break;
+
+    default:
         break;
     }
 }
