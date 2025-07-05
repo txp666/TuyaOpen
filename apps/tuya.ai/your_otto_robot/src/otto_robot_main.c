@@ -75,20 +75,9 @@ void otto_power_on()
  */
 static void otto_Show()
 {
-    PR_DEBUG("开始初始化Otto机器人...");
-
-    // 初始化Otto机器人
-    otto_init(PIN_LEFT_LEG, PIN_RIGHT_LEG, PIN_LEFT_FOOT, PIN_RIGHT_FOOT);
-
-    // 设置舵机微调值 (如果舵机零位不准确，可以在这里调整)
-    otto_set_trims(0, 0, 0, 0);
-
-    // 启用舵机速度限制，防止舵机运动过快
-    otto_enable_servo_limit(SERVO_LIMIT_DEFAULT);
-
     // 回到初始位置
     otto_home();
-    tal_system_sleep(1000);
+    tal_system_sleep(500);
 
     PR_DEBUG("Otto initialized,starting to show...");
 
